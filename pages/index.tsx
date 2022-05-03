@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
-import Layout from '../src/components/Layout/Layout'
+import Layout from '../src/components/Layout'
 
 const Home: NextPage = () => {
-  return <L></L    fdaysdffa fdout>
+  const x = 'x'
+  return <Layout></Layout>
 }
 
 export default Home
