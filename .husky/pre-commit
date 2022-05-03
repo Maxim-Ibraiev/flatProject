@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-prettier --write
+prettier pages/**/* src/**/* --check  
 npm run lint
