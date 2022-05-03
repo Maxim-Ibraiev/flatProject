@@ -1,0 +1,43 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ['plugin:react/recommended', 'standard', 'next/core-web-vitals', 'prettier'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['react', '@typescript-eslint'],
+  rules: {
+    // "no-unsafe-optional-chaining": 0,
+    // semi: ["warn", "never"],
+    // "import/prefer-default-export": "off",
+    // "react/react-in-jsx-scope": "off",
+    // "jsx-a11y/anchor-is-valid": "off",
+    // "import/no-unresolved": "off",
+    // "import/extensions": "off",
+    // "no-return-assign": "off",
+    // "react/prop-types": "off",
+    // "import/no-cycle": "off",
+    // "arrow-parens": "off",
+    // "no-console": "off",
+    // "linebreak-style": 0,
+    // "global-require": 0,
+    // "eslint linebreak-style": [0, "error", "windows"],
+    // "no-use-before-define": 0,
+    // "react/jsx-filename-extension": 0,
+    // "@typescript-eslint/explicit-module-boundary-types": 0,
+    // "@typescript-eslint/no-unused-vars": "warn",
+    // "react/require-default-props": 0,
+    // "eslint-disable no-return-await": "off",
+    'no-unused-vars': 'warn',
+
+    quotes: 0,
+  },
+}
