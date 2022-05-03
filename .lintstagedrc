@@ -1,4 +1,13 @@
 {
-  "src/**/*.{json,css,scss,md}": ["prettier --write"],
-  "src/**/*.{js,jsx,ts,tsx}": ["prettier --write", "eslint -c .eslintrc.js src/ --fix"]
+  "src/**/*.{json,css,scss,md}": [
+    "prettier --write"
+  ],
+  "src/**/*.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint -c .eslintrc.js src/ --fix"
+  ],
+  "pages/**/*.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint -c .eslintrc.js src/ --fix"
+  ]
 }
