@@ -32,7 +32,7 @@ export default function Footer() {
           </ListItem>
         </List>
         <CustomLink
-          href="https://maxim-ibraiev.github.io/resume/"
+          href={routes.resume}
           color="primary.contrastText"
           sx={{ display: 'flex', justifyContent: 'center' }}
         >

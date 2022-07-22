@@ -59,6 +59,7 @@ export default function Flat({ flatsData, flatId }: IProps) {
               <Image
                 src={`/${flat.mainImageSrc}`}
                 alt={flat.title}
+                priority
                 objectFit="cover"
                 layout="fill"
               />
@@ -68,7 +69,6 @@ export default function Flat({ flatsData, flatId }: IProps) {
             <ImageCollage />
           </Grid>
         </Grid>
-
         <Typography variant="h4" component="h2" my={3}>
           Subtitle
         </Typography>
@@ -115,7 +115,14 @@ export default function Flat({ flatsData, flatId }: IProps) {
             <Box
               sx={{ bgcolor: theme.palette.grey[200], display: 'flex', justifyContent: 'right' }}
             >
-              <Button onClick={() => setModalIsOpen(false)}>Cancel</Button>
+              <Button
+                onClick={() => {
+                  setModalIsOpen(false)
+                  setDate(moment())
+                }}
+              >
+                Cancel
+              </Button>
               <Button
                 onClick={() => {
                   setModalIsOpen(false)
