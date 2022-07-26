@@ -10,11 +10,12 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import { useTheme } from '@mui/material/styles'
-import { Modal } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Modal } from '@mui/material'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker'
 import TextField from '@mui/material/TextField'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Layout from '../src/components/Layout'
 import ImageCollage from '../src/components/ImageCollage'
 import { FlatStructure, getFlats } from '../src/helper'
@@ -45,7 +46,7 @@ export default function Flat({ flatsData, flatId }: IProps) {
   return (
     <Layout>
       <Container>
-        <Typography variant="h3" component="h1" my={5}>
+        <Typography variant="h3" component="h1" my={{ xs: 1, sm: 3 }}>
           {flat.title}
         </Typography>
         <Grid container spacing={1}>
@@ -75,6 +76,44 @@ export default function Flat({ flatsData, flatId }: IProps) {
         <Typography variant="body1" component="p">
           {flat.description}
         </Typography>
+
+        <Typography variant="h6" component="h3" my={2}>
+          Frequently Asked Questions
+        </Typography>
+
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography>Question 1</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
+              ex, sit amet blandit leo lobortis eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography>Question 2</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
+              ex, sit amet blandit leo lobortis eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography>Question 3</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
+              ex, sit amet blandit leo lobortis eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', my: 3 }}>
           <Button
