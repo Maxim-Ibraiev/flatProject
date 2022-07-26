@@ -1,6 +1,6 @@
-import type FlatStructure from '../helper/FlatStructure'
+import type TourStructure from '../helper/TourStructure'
 
-export interface IFlatData {
+export interface ITourData {
   title: string
   description: string
   rating: number
@@ -9,6 +9,6 @@ export interface IFlatData {
   id: string | number
 }
 
-export type IFlat = FlatStructure
+export type ITour = TourStructure
 
-export type IFlats = FlatStructure[]
+export type ITours = TourStructure[]

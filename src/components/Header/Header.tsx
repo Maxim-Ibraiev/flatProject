@@ -87,7 +87,7 @@ export default function SearchAppBar() {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: 'white' }}
           >
             <Typography variant="h6" noWrap component="div">
-              Flats
+              Tours
             </Typography>
           </Lick>
           <Search onSubmit={handleSubmit}>

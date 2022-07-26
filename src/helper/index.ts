@@ -1,3 +1,3 @@
-export { default as FlatStructure } from './FlatStructure'
-export { default as getFlats } from './getFlats'
-export { default as getFlatStructure } from './getFlatStructure'
+export { default as TourStructure } from './TourStructure'
+export { default as getTour } from './getTour'
+export { default as getTourStructure } from './getTourStructure'

@@ -18,26 +18,26 @@ import TextField from '@mui/material/TextField'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Layout from '../src/components/Layout'
 import ImageCollage from '../src/components/ImageCollage'
-import { FlatStructure, getFlats } from '../src/helper'
+import { TourStructure, getTour } from '../src/helper'
 import MOCK_DATA from '../src/helper/MOCK_DATA.json'
 import routes from '../src/routes'
-import type { IFlatData } from '../src/interfaces'
+import type { ITourData } from '../src/interfaces'
 
 interface IProps {
-  flatsData: IFlatData[]
-  flatId: string
+  tourData: ITourData[]
+  tourId: string
 }
 
-export default function Flat({ flatsData, flatId }: IProps) {
-  const flats = getFlats(flatsData)
-  const flat = flats.find(({ id }) => id.toString() === flatId)
+export default function Tour({ tourData, tourId }: IProps) {
+  const tours = getTour(tourData)
+  const tour = tours.find(({ id }) => id.toString() === tourId)
   const [date, setDate] = useState<Moment>(moment())
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [isSelectedSuccess, setIsSelectedSuccess] = useState(false)
 
-  if (!flat) {
+  if (!tour) {
     return <Error statusCode={404} />
   }
 
@@ -47,7 +47,7 @@ export default function Flat({ flatsData, flatId }: IProps) {
     <Layout>
       <Container>
         <Typography variant="h3" component="h1" my={{ xs: 1, sm: 3 }}>
-          {flat.title}
+          {tour.title}
         </Typography>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={8}>
@@ -58,8 +58,8 @@ export default function Flat({ flatsData, flatId }: IProps) {
               }}
             >
               <Image
-                src={`/${flat.mainImageSrc}`}
-                alt={flat.title}
+                src={`/${tour.mainImageSrc}`}
+                alt={tour.title}
                 priority
                 objectFit="cover"
                 layout="fill"
@@ -74,7 +74,7 @@ export default function Flat({ flatsData, flatId }: IProps) {
           Subtitle
         </Typography>
         <Typography variant="body1" component="p">
-          {flat.description}
+          {tour.description}
         </Typography>
 
         <Typography variant="h6" component="h3" my={2}>
@@ -180,18 +180,18 @@ export default function Flat({ flatsData, flatId }: IProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params = {} }) => {
-  const flatId = Array.isArray(params.flat) ? params.flat[0] : params.flat
+  const tourId = Array.isArray(params.tour) ? params.tour[0] : params.tour
 
   return {
-    props: { flatsData: MOCK_DATA, flatId },
+    props: { tourData: MOCK_DATA, tourId },
   }
 }
 
 export const getStaticPaths = async () => {
-  const flats = MOCK_DATA.map((el: IFlatData) => new FlatStructure(el))
+  const tours = MOCK_DATA.map((el: ITourData) => new TourStructure(el))
 
   return {
-    paths: flats.map(flat => routes.getFlat(flat.id)),
+    paths: tours.map(tour => routes.getTour(tour.id)),
     fallback: false,
   }
 }

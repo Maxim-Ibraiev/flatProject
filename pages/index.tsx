@@ -1,22 +1,22 @@
 import Container from '@mui/material/Container'
 import CategoryList from '../src/components/CategoryList'
 import Layout from '../src/components/Layout'
-import { getFlatStructure } from '../src/helper'
+import { getTourStructure } from '../src/helper'
 import MOCK_DATA from '../src/helper/MOCK_DATA.json'
-import { IFlatData } from '../src/interfaces'
+import { ITourData } from '../src/interfaces'
 
 interface IProps {
-  flatsData: IFlatData[]
+  tourData: ITourData[]
 }
 
-export default function Home({ flatsData }: IProps) {
-  const flats = getFlatStructure(flatsData)
+export default function Home({ tourData }: IProps) {
+  const tours = getTourStructure(tourData)
 
   return (
     <Layout>
       <Container>
-        <CategoryList title="Top" flats={flats} />
-        <CategoryList title="The most review" flats={flats} />
+        <CategoryList title="Top" tours={tours} />
+        <CategoryList title="The most review" tours={tours} />
       </Container>
     </Layout>
   )
@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      flatsData: data,
+      tourData: data,
     },
   }
 }

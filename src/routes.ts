@@ -4,7 +4,7 @@ const routes = {
   portfolio: '/portfolio',
   prices: '/prices',
   resume: 'https://maxim-ibraiev.github.io/resume/',
-  getFlat: (id: string | number) => `/${id}`,
+  getTour: (id: string | number) => `/${id}`,
 }
 
 export default routes

@@ -6,27 +6,27 @@ import Typography from '@mui/material/Typography'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
-import { IFlat } from '../../interfaces'
+import { ITour } from '../../interfaces'
 import routes from '../../routes'
 
 interface IProps {
-  flat: IFlat
+  tour: ITour
 }
 
-export default function MediaCard({ flat }: IProps) {
+export default function MediaCard({ tour }: IProps) {
   return (
-    <Link href={routes.getFlat(flat.id)}>
+    <Link href={routes.getTour(tour.id)}>
       <Box component="a">
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
             height="100"
-            image={flat.mainImageSrc}
-            alt={`Apartment photo of ${flat.title}`}
+            image={tour.mainImageSrc}
+            alt={`Apartment photo of ${tour.title}`}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h3">
-              {flat.title}
+              {tour.title}
             </Typography>
             <Typography
               variant="body2"
@@ -39,7 +39,7 @@ export default function MediaCard({ flat }: IProps) {
                 overflow: 'hidden',
               }}
             >
-              {flat.description}
+              {tour.description}
             </Typography>
           </CardContent>
           <CardActions>
