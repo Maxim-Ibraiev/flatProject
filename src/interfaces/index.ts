@@ -1,14 +1,21 @@
 import type TourStructure from '../helper/TourStructure'
 
+export type ITour = TourStructure
+// export type ITours = TourStructure[]
+
 export interface ITourData {
-  title: string
-  description: string
+  // images: { src?: string }[]
+  image: string
+  id: number
+  name: string
+  duration: number
   rating: number
-  images: { src?: string }[]
-  area: string
-  id: string | number
+  numberOfReviews: number
+  price: number
 }
 
-export type ITour = TourStructure
-
-export type ITours = TourStructure[]
+export type IDirectionsData = {
+  id: number
+  name: string
+  tours: ITourData[]
+}[]

@@ -1,12 +1,12 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { Grid } from '@mui/material'
-import { ITours } from '../../interfaces'
+import Grid from '@mui/material/Grid'
 import Card from '../Card'
+import type { ITour } from '../../interfaces'
 
 type IProps = {
   title: string
-  tours: ITours
+  tours: ITour[]
 }
 
 export default function CategoryList({ title, tours }: IProps) {

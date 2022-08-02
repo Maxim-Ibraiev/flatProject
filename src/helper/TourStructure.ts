@@ -8,15 +8,15 @@ export default class TourStructure {
   }
 
   get mainImageSrc() {
-    return 'test.png' || this.#tour.images[0]
+    return this.#tour.image
   }
 
   get title() {
-    return this.#tour.title
+    return this.#tour.name
   }
 
   get description() {
-    return this.#tour.description
+    return this.#tour.name
   }
 
   get rating() {
@@ -24,11 +24,7 @@ export default class TourStructure {
   }
 
   get images() {
-    return this.#tour.images
-  }
-
-  get area() {
-    return this.#tour.area
+    return this.#tour.image
   }
 
   get id() {

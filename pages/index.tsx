@@ -1,33 +1,34 @@
 import Container from '@mui/material/Container'
 import CategoryList from '../src/components/CategoryList'
 import Layout from '../src/components/Layout'
-import { getTourStructure } from '../src/helper'
-import MOCK_DATA from '../src/helper/MOCK_DATA.json'
-import { ITourData } from '../src/interfaces'
+import { getDirectionsStructure } from '../src/helper'
+import DIRECTIONS_DATA from '../src/helper/DIRECTIONS_DATA.json'
+import type { IDirectionsData } from '../src/interfaces'
 
 interface IProps {
-  tourData: ITourData[]
+  directionsData: IDirectionsData
 }
 
-export default function Home({ tourData }: IProps) {
-  const tours = getTourStructure(tourData)
+export default function Home({ directionsData }: IProps) {
+  const directions = getDirectionsStructure(directionsData)
 
   return (
     <Layout>
       <Container>
-        <CategoryList title="Top" tours={tours} />
-        <CategoryList title="The most review" tours={tours} />
+        {directions.map(({ tours, name }) => (
+          <CategoryList key={name} title={name} tours={tours} />
+        ))}
       </Container>
     </Layout>
   )
 }
 
 export const getStaticProps = async () => {
-  const data = MOCK_DATA
+  const data = DIRECTIONS_DATA
 
   return {
     props: {
-      tourData: data,
+      directionsData: data,
     },
   }
 }
