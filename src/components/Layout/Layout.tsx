@@ -6,11 +6,21 @@ import Footer from '../Footer'
 type IProps = React.PropsWithChildren<{}>
 
 export default function Layout({ children }: IProps) {
+  // const [minHeight, setMinHeight] = useState(152)
+
   return (
-    <>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       <Header />
-      <Box component="main">{children}</Box>
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        {children}
+      </Box>
       <Footer />
-    </>
+    </Box>
   )
 }

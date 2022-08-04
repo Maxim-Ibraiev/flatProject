@@ -68,7 +68,7 @@ export default function SearchAppBar() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -103,8 +103,7 @@ export default function SearchAppBar() {
           <Menu open={isMenuOpen} anchorEl={logoEl.current} onClick={() => setIsMenuOpen(false)}>
             <MenuItem onClick={() => router.push(routes.home)}>Home</MenuItem>
             <MenuItem onClick={() => router.push(routes.about)}>About</MenuItem>
-            <MenuItem onClick={() => router.push(routes.portfolio)}>Portfolio</MenuItem>
-            <MenuItem onClick={() => router.push(routes.prices)}>Prices</MenuItem>
+            <MenuItem onClick={() => router.push(routes.resume)}>Resume</MenuItem>
             <MenuItem onClick={() => router.push(routes.resume)}>Made by Max</MenuItem>
           </Menu>
         </Toolbar>

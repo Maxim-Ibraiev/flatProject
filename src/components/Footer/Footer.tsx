@@ -20,24 +20,21 @@ export default function Footer() {
           </ListItem>
           <Divider orientation="vertical" flexItem sx={{ bgcolor: 'primary.contrastText' }} />
           <ListItem>
-            <CustomLink href={routes.portfolio} width={1} color="primary.contrastText">
-              <ListItemText primary="Portfolio" />
+            <CustomLink href={routes.resume} width={1} color="primary.contrastText">
+              <ListItemText primary="Resume" />
             </CustomLink>
           </ListItem>
           <Divider orientation="vertical" flexItem sx={{ bgcolor: 'primary.contrastText' }} />
           <ListItem>
-            <CustomLink href={routes.prices} width={1} color="primary.contrastText">
-              <ListItemText primary="Prices" />
+            <CustomLink
+              href={routes.resume}
+              color="primary.contrastText"
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <Typography variant="body1">Made by Max</Typography>
             </CustomLink>
           </ListItem>
         </List>
-        <CustomLink
-          href={routes.resume}
-          color="primary.contrastText"
-          sx={{ display: 'flex', justifyContent: 'center' }}
-        >
-          <Typography variant="body1">Made by Max</Typography>
-        </CustomLink>
       </Container>
     </Box>
   )

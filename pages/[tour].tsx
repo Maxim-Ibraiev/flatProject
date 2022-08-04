@@ -46,6 +46,15 @@ export default function Tour({ directionsData, directionsId }: IProps) {
 
   const handleChange = (value: Date | null): void => setDate(moment(value))
 
+  const handleShouldDisableDate = (day: Date) => {
+    const currentDate = moment(day)
+    const maxDate = moment().add(3, 'w')
+    const diff = maxDate.diff(currentDate, 'd')
+    const isDisable = diff < 0 || diff > 21 // 21 == 3 'weeks'
+
+    return isDisable
+  }
+
   return (
     <Layout>
       <Container>
@@ -150,7 +159,7 @@ export default function Tour({ directionsData, directionsId }: IProps) {
                 openTo="day"
                 value={date}
                 onChange={handleChange}
-                shouldDisableDate={dateToCheck => Boolean(new Date() >= new Date(dateToCheck))}
+                shouldDisableDate={handleShouldDisableDate}
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 renderInput={params => <TextField {...params} />}
               />
