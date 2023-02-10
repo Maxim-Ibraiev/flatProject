@@ -7,7 +7,7 @@ const nextConfig = {
       'tcproduction.blob.core.windows.net',
       'd2ru2mvuh5wx24.cloudfront.net',
       'assets.simpleviewcms.com',
-      's3.amazonaws.com',
+      'dynamic-media-cdn.tripadvisor.com',
       'footwearnews.com',
     ],
   },
